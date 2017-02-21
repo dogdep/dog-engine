@@ -5,3 +5,6 @@ dogapi:
 
 dog:
 	@cd cmd/dog && go build -ldflags="-s -w" -o ../../bin/dog
+
+test:
+	@go test -v ./...
