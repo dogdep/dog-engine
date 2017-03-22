@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-ingress
+spec:
+  type: LoadBalancer
+  loadBalancerIP: 104.155.18.205  # static IP pre-allocated.
+  ports:
+    - port: 80
+      name: http
+    - port: 443
+      name: https
+  selector:
+    k8s-app: nginx-ingress-lb
